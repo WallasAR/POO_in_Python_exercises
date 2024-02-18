@@ -69,6 +69,7 @@ class Console:
         else:
             print(f"Ligue o {self.nome} primeiro!")
 
+    # Método para verificar status atual do console
     def statusConsole(self):
         print(f'''
         - Marca: {self.marca}
