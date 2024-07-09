@@ -3,6 +3,7 @@ import time
 import sys 
 import os
 
+# função para limpar tela
 clear = lambda: os.system("cls")
 
 # função para deletar ultima linha no console(apenas para visualização mais agradável).
@@ -49,7 +50,8 @@ class MedicAppointment:
             print("[?] Não é possível cancelar uma consulta já cancelada.")
         elif (self.__isPay):
             self.__isCancel = True
-            print("[?] A consulta foi paga. O cancelamento ira ser realizado e o debito será estornado")
+            self.__isPay = False
+            print("[?] A consulta foi paga. O cancelamento irá ser realizado e o debito será estornado")
         else:
             self.__isCancel = True
             print(f"[+] Consulta do paciente {self.__pacient} cancelada com sucesso.")
@@ -64,24 +66,25 @@ class MedicAppointment:
                 if (dateReturnChosen <= limitDate and dateReturnChosen != self.__dateReturn and dateReturnChosen >= date.today()):
                     if (dateReturnChosen.weekday() not in [5,6]):
                         self.__dateReturn = dateReturnChosen
-                        print(f"Retorno agendado para o dia {self.__dateReturn}.")
+                        print(f"[+] Retorno agendado para o dia {self.__dateReturn}.")
                     else:
-                        print("O dia escolhido não é um dia util.")
+                        print("[-] O dia escolhido não é um dia util.")
                 else:
-                    print("O prazo de retorno ultrapaça os 30 dias úteis ou a data de retorno é inválida")
+                    print("[-] O prazo de retorno ultrapaça os 30 dias úteis ou a data de retorno é inválida")
             else:
-                print("Só é possível agendar retorno para consultas pagas.")
+                print("[-] Só é possível agendar retorno para consultas pagas.")
         else:
-            print("Não é possivel agendar retorno, a consulta foi cancelada.")
+            print("[-] Não é possivel agendar retorno, a consulta foi cancelada.")
+            
     # Interface do Sistema
     def interface():
         # Array que salva as consultas feitas
-        AppoimentReportArray = []
+        appoimentReportArray = []
         
         # Menu
         while True:
             # Pequeno timeout para visualização das operações
-            if (AppoimentReportArray):
+            if (appoimentReportArray):
                 time.sleep(2) # Delay de 2 segundos
 
             print('''
@@ -104,7 +107,7 @@ class MedicAppointment:
                 
             if (choice == 1):
                 print("☑ 1 - Nova consulta (agendamento)")
-                print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+                print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
               # tratamento de erro try/except
                 try:
                     QueryDate = input("• Data da consulta (dd/mm/aaaa): ")
@@ -116,7 +119,7 @@ class MedicAppointment:
                     # Verifica se a consulta foi criada com base na data
                     if (newQuery.__queryDate):
                         # Adiciona o objeto ao array
-                        AppoimentReportArray.append(newQuery)
+                        appoimentReportArray.append(newQuery)
                         clear()
                         print(f"[+] Consulta agendada para o dia {newQuery.__queryDate} com o(a) Dr(a). {newQuery.__doctor}")
                 except ValueError as e:
@@ -128,7 +131,7 @@ class MedicAppointment:
                 pacient = input("• Nome do paciente: ")
 
                 queryPayment = next(
-                (c for c in AppoimentReportArray  # Itera sobre cada consulta "c" na lista "consultas"
+                (c for c in appoimentReportArray  # Itera sobre cada consulta "c" na lista "consultas"
                 if c.__pacient == pacient and  # Verifica se o paciente da consulta é o paciente especificado
                 not c.__isPay and  # Verifica se a consulta não está paga
                 not c.__isCancel),  # Verifica se a consulta não está cancelada
@@ -150,11 +153,11 @@ class MedicAppointment:
                 pacient = input("• Nome do paciente: ")
 
                 queryCancel = next(
-                    (c for c in AppoimentReportArray
+                    (c for c in appoimentReportArray
                     if c.__pacient == pacient),
                     None
                 )
-
+                # Verifica se a opção retornou resultados para a chamada do método
                 if (queryCancel):
                     clear()
                     queryCancel.cancelConsultation()
@@ -169,7 +172,7 @@ class MedicAppointment:
                 queryReturn = input("• Data do retorno (válido por até 30 dias): ")
 
                 queryDateReturn = next(
-                    (c for c in AppoimentReportArray
+                    (c for c in appoimentReportArray
                     if c.__pacient == pacient),
                     None
                 )
@@ -184,11 +187,45 @@ class MedicAppointment:
             elif (choice == 5):
                 print("☑ 5 - Relatório de consultas realizadas no mês por médico")
                 print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-                pass
+                doctor = input("• Nome do médico: ")
+                
+                doctorQuery = [
+                    c for c in appoimentReportArray
+                    if c.__doctor == doctor 
+                    and c.__queryDate.month == date.today().month # Verifica se a data corresponde ao mes atual
+                    ]
+                    
+                if (doctorQuery):  
+                    clear()  
+                    print(f"[+] Consultas realizadas no mês pelo médico {doctor}: ")
+                    print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+                
+                    for queryReport in doctorQuery:
+                        print(f"| {queryReport.__queryDate} ↦ Paciente {queryReport.__pacient}")
+                    time.sleep(2)
+                else:
+                    print("[-] Medico não encontrado.")
+                    
             elif (choice == 6): 
-                print("☑ 6 - Relatório de faturamento da Clinica por mês Selecionado")
+                print("☑ 6 - Relatório de faturamento da Clinica por mês")
                 print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-                pass
+                billingReport = sum(
+                    100 for c in appoimentReportArray
+                    if c.__isPay 
+                    and c.__queryDate.month == date.today().month 
+                    )
+                
+                if (billingReport):
+                    print("//////////////////////////////////////////////////////////////")
+                    print(f"| Mês \n ↳ {date.today().strftime("%B")}")
+                    print(f"| Lucro bruto total \n ↳ R$ {(billingReport * 3):.2f}")
+                    print(f"| Pagamento dos médicos \n ↳ - R$ {(billingReport * 2):.2f}")
+                    print(f"| Total \n ↳ R$ {billingReport:.2f}")
+                    time.sleep(5)
+                else:
+                    clear()
+                    print("[-] Não há registros sobre o faturamento da clinica no momento.")
+                    
             else:
                 clear()
                 print("☒ Opção inválida")
