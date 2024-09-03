@@ -6,7 +6,7 @@ Explore as atividades abaixo e clique no link correspondente para visualizar a d
 
 ## 📝 **Lista de Atividades**
 
-### **1. Minha Primeira Classe/Objeto**
+### **1. [Minha Primeira Classe/Objeto](https://github.com/WallasAR/POO_in_Python_exercises/blob/339a40eeb2a2c6f06d9a5dc3b3a388dfb8c0bdf8/activity%20001/Class_and_Object.py)**
 > **📅 Data:** 16/02/2024  
 > **📝 Descrição:**  
 > - Implementação de uma classe e objeto em Python.
@@ -16,7 +16,7 @@ Explore as atividades abaixo e clique no link correspondente para visualizar a d
 
 ---
 
-### **2. Atividade: Construtores**
+### **2. [Atividade: Construtores](https://github.com/WallasAR/POO_in_Python_exercises/tree/339a40eeb2a2c6f06d9a5dc3b3a388dfb8c0bdf8/activity%20002)**
 > **📅 Data:** 01/03/2024  
 > **📝 Descrição:**  
 > - **Exercício 1:** Modele uma classe `Rádio` com estados e comportamentos, crie dois objetos e execute métodos.
@@ -24,7 +24,7 @@ Explore as atividades abaixo e clique no link correspondente para visualizar a d
 
 ---
 
-### **3. Prática: Implementação de uma CNH e Trabalhando com Datetime**
+### **3. [Prática: Implementação de uma CNH e Trabalhando com Datetime](https://github.com/WallasAR/POO_in_Python_exercises/tree/339a40eeb2a2c6f06d9a5dc3b3a388dfb8c0bdf8/activity%20003)**
 > **📅 Data:** 15/03/2024  
 > **📝 Descrição:**  
 > - Implemente uma classe em Python que represente uma carteira de habilitação (CNH).
@@ -33,7 +33,7 @@ Explore as atividades abaixo e clique no link correspondente para visualizar a d
 
 ---
 
-### **4. Atividade: Implementação da Classe `RadioFM`**
+### **4. [Atividade: Implementação da Classe `RadioFM`](https://github.com/WallasAR/POO_in_Python_exercises/tree/339a40eeb2a2c6f06d9a5dc3b3a388dfb8c0bdf8/activity%20004)**
 > **📅 Data:** 22/03/2024  
 > **📝 Descrição:**  
 > - Implemente os métodos descritos na classe `RadioFM`:
@@ -46,7 +46,7 @@ Explore as atividades abaixo e clique no link correspondente para visualizar a d
 
 ---
 
-### **5. Atividade: Encapsulamento - Classe `Pessoa`**
+### **5. [Atividade: Encapsulamento - Classe `Pessoa`](https://github.com/WallasAR/POO_in_Python_exercises/tree/339a40eeb2a2c6f06d9a5dc3b3a388dfb8c0bdf8/activity%20005)**
 > **📅 Data:** 05/04/2024  
 > **📝 Descrição:**  
 > - Modele uma classe `Pessoa` utilizando conceitos como construtores, parâmetros opcionais, encapsulamento e decoradores.
@@ -56,7 +56,7 @@ Explore as atividades abaixo e clique no link correspondente para visualizar a d
 
 ---
 
-### **6. Atividade Avaliativa: Consulta Médica**
+### **6. [Atividade Avaliativa: Consulta Médica](https://github.com/WallasAR/POO_in_Python_exercises/tree/339a40eeb2a2c6f06d9a5dc3b3a388dfb8c0bdf8/activity%20006)**
 > **📅 Data:** 05/07/2024  
 > **📝 Descrição:**  
 > - Implemente uma classe que represente uma consulta médica com os seguintes atributos: data da consulta, data do retorno, paciente, médico, pago, cancelado.
@@ -70,7 +70,7 @@ Explore as atividades abaixo e clique no link correspondente para visualizar a d
 
 ---
 
-### **7. Exercício: Associação de Classes 1:1 (Celular - Bateria)**
+### **7. [Exercício: Associação de Classes 1:1 (Celular - Bateria)](https://github.com/WallasAR/POO_in_Python_exercises/tree/339a40eeb2a2c6f06d9a5dc3b3a388dfb8c0bdf8/activity%20007)**
 > **📅 Data:** 09/08/2024  
 > **📝 Descrição:**  
 > - Implemente uma associação de classes entre `Celular` e `Bateria`.
@@ -84,7 +84,7 @@ Explore as atividades abaixo e clique no link correspondente para visualizar a d
 
 ---
 
-### **8. Exercício: Associação de Classes 1:N (Time - Jogador)**
+### **8. [Exercício: Associação de Classes 1:N (Time - Jogador)](https://github.com/WallasAR/POO_in_Python_exercises/tree/339a40eeb2a2c6f06d9a5dc3b3a388dfb8c0bdf8/activity%20008)**
 > **📅 Data:** 30/08/2024  
 > **📝 Descrição:**  
 > - Implemente uma associação de classes 1:N entre `Time`, `Jogador`, e `Campeonato`.
