@@ -98,7 +98,7 @@ Explore as atividades abaixo e clique no link correspondente para visualizar a d
 ---
 
 ### **9. [Sistema Bancário: Herança e Polimorfismo](https://github.com/WallasAR/POO_in_Python_exercises/tree/79893956be1212ad82712a05e3f1801790613300/activity%20009)**
-> **📅 Data:** 11/09/2024  
+> **📅 Data:** 06/09/2024  
 > **📝 Descrição:**  
 > - Implementação de um sistema bancário com três tipos de contas: `ContaCorrente`, `ContaPoupanca`, e `ContaImposto`.
 > - Aplique conceitos de **herança** para criar as contas derivadas da classe base `ContaCorrente`.
