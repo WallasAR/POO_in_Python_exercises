@@ -96,3 +96,13 @@ Explore as atividades abaixo e clique no link correspondente para visualizar a d
 > - Crie objetos para representar pelo menos 4 times, adicione jogadores, realize transferências e exclua jogadores. Registre partidas no campeonato e calcule a pontuação dos times.
 
 ---
+
+### **9. [Sistema Bancário: Herança e Polimorfismo](https://github.com/WallasAR/POO_in_Python_exercises/tree/79893956be1212ad82712a05e3f1801790613300/activity%20009)**
+> **📅 Data:** 11/09/2024  
+> **📝 Descrição:**  
+> - Implementação de um sistema bancário com três tipos de contas: `ContaCorrente`, `ContaPoupanca`, e `ContaImposto`.
+> - Aplique conceitos de **herança** para criar as contas derivadas da classe base `ContaCorrente`.
+> - Use **polimorfismo** para métodos como `transferir` e `calcular_imposto`.
+> - **💡 Dicas:**
+>   1. Garanta que o saldo da conta seja manipulado corretamente ao debitar, creditar e transferir.
+>   2. Teste diferentes cenários com instâncias de contas e verifique a atualização dos valores no banco.
