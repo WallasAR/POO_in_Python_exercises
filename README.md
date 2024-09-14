@@ -106,3 +106,16 @@ Explore as atividades abaixo e clique no link correspondente para visualizar a d
 > - **💡 Dicas:**
 >   1. Garanta que o saldo da conta seja manipulado corretamente ao debitar, creditar e transferir.
 >   2. Teste diferentes cenários com instâncias de contas e verifique a atualização dos valores no banco.
+
+---
+
+### **10. [Sistema de Gerenciamento de Loja](https://github.com/WallasAR/POO_in_Python_exercises/tree/b03257a7015d9e705b4c8f1715f6f3a5e5f4b2d6/activity%20010)**
+> **📅 Data:** 13/09/2024  
+> **📝 Descrição:**  
+> - Criação de um sistema para gerenciar uma loja com diferentes tipos de produtos (Eletrônicos, Móveis e Vestuário), aplicando descontos específicos para cada categoria.
+> - Implementação de um **Carrinho de Compras** que calcula o valor total da compra, aplicando os descontos corretos.
+> - **💡 Dicas:**
+>   1. Utilize o polimorfismo para aplicar descontos com métodos sobrescritos.
+>   2. A classe `Carrinho` deve permitir adicionar e remover produtos, além de exibir uma descrição completa da compra.
+
+---
