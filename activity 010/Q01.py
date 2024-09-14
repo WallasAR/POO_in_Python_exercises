@@ -15,25 +15,26 @@ class Product:
         return self._price
     
     # Método para calcular o desconto (deve ser implementado nas subclasses)
+    @staticmethod
     def discount(self):
         raise NotImplementedError("Desconto não implementado!")
 
 # Classe Eletrônicos, que herda de Produto e implementa um desconto de 10%
 class Electronics(Product):
     def discount(self):
-        priceDiscount = self._price - (self._price * 0.1) # 10% de desconto
+        priceDiscount = self.price - (self.price * 0.1) # 10% de desconto
         return priceDiscount
 
 # Classe Móveis, que herda de Produto e implementa um desconto de 15%
 class Furniture(Product):
     def discount(self):
-        priceDiscount = self._price - (self._price * 0.15) # 15% de desconto
+        priceDiscount = self.price - (self.price * 0.15) # 15% de desconto
         return priceDiscount
 
 # Classe Vestuário, que herda de Produto e implementa um desconto de 5%
 class Clothing(Product):
     def discount(self):
-        priceDiscount = self._price - (self._price * 0.05) # 5% de desconto
+        priceDiscount = self.price - (self.price * 0.05) # 5% de desconto
         return priceDiscount
 
 # Classe Carrinho de Compras que contém uma lista de produtos
